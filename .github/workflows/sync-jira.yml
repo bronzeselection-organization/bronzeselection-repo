@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./
+      - uses: ./automation/sync-with-jira.yaml
         with:
           webhook-url: https://automation.atlassian.com/pro/hooks/66349218580a7c9ec54bc031f46c7ed1dc37f5f7
