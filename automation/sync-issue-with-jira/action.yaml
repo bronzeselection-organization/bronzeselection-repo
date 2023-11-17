@@ -83,7 +83,7 @@ runs:
           echo "Converting markdown to Jira is only possible with Ubuntu 22.04 (jammy). Pushing verbatim content to Jira..."
         else
           TMPDIR=$(mktemp -d)
-          trap 'rm -rf -- $"TMPDIR"' EXIT
+          trap 'rm -rf -- "$TMPDIR"' EXIT
 
           sudo apt install -y python3-mistletoe
           echo ${body} > $TMPDIR/body.md
