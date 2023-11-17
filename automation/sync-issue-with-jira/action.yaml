@@ -64,7 +64,7 @@ runs:
       shell: bash
 
     - name: Update Jira
-      if: ${{ env.NeedsJiraUpdate == 'true' }}
+      if: ${{ env.NeedsJiraUpdate == true }}
       env:
         # ID is the html url to keep a link between systems as there is no way to force an ID on Jira side
         id: ${{ github.event.issue.html_url }}
