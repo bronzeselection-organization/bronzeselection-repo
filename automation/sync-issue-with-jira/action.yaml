@@ -35,7 +35,7 @@ runs:
 
         # Issue creation with label will trigger 2 events and run twice: one create, one labelled.
         # We want to focus only on labelling then for creating issues Jira-side.
-        if [ ${{ github.event_name }} == "issues" ] && [ ${{ github.event.action}} == "opened" ]; then
+        if [ ${{ github.event_name }} == "issues" ] && [ ${{ github.event.action }} == "opened" ]; then
           echo "Ignoring issue creation as a label will trigger a second event."
           exit 0
         fi
