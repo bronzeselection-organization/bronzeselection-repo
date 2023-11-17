@@ -46,7 +46,7 @@ runs:
 
         ## second chance, this is just been unlabeled and needs to be deleted on Jira
         if [ ${{ github.event.action }} == "unlabeled" ] && [ ${{ github.event.label.name }} == ${{ inputs.label }} ]; then
-          toConsider = true
+          toConsider=true
         fi
         if [ "${toConsider}" == false ]; then
           echo "Our desired label was not found on issue or not unlabeled, skipping"
