@@ -9,4 +9,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./automation/sync-issue-with-jira/
         with:
-          webhook-url: ${{ secrets.JIRA_WEBHOOK_URL }}
+          webhook-url: https://automation.atlassian.com/pro/hooks/08e1e4d53d18f31fc5f789d7c91a067d70229dd2
