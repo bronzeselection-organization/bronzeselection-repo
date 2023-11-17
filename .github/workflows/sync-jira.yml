@@ -9,4 +9,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./
         with:
-          webhook-url: ${{ secrets.CREATE_JIRA_ISSUE }}
+          webhook-url: https://automation.atlassian.com/pro/hooks/66349218580a7c9ec54bc031f46c7ed1dc37f5f7
