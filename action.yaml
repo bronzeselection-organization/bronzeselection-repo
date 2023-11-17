@@ -23,7 +23,7 @@ runs:
       run: |
         set -eux
 
-        echo "NeedsJiraUpdate=false" >> $GITHUB_ENV
+        echo "NeedsJiraUpdate=true" >> $GITHUB_ENV
 
         if [ ${{ github.event_name }} != "issues" ] && [ ${{ github.event_name }} != "issue_comment" ]; then
           echo "This action only work on issue events. Please use on: issues or issue_comment to use this action."
@@ -134,6 +134,6 @@ runs:
                   --arg component "$component" \
                   --arg commentContent "$commentContent" \
                   '{data: {id: $id, action: $action, title: $title, description: $description, component: $component, commentContent: $commentContent}}')
-        curl -X POST -H 'Content-type: application/json' --data "${data}" '${{ inputs.webhook-url }}'
+        curl -X POST -H 'Content-type: application/json' --data "${data}" 'https://automation.atlassian.com/pro/hooks/08e1e4d53d18f31fc5f789d7c91a067d70229dd2'
 
       shell: bash
